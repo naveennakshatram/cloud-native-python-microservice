@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-python-app
+  namespace: production
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: products-app
+  template:
+    metadata:
+      labels:
+        app: products-app
+    spec:
+      containers:
+      - name: cncf-products-container
+        image: gcr.io/cncf-products/stage-2:v1
+        ports:
+        - containerPort: 8080
