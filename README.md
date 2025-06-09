@@ -44,3 +44,26 @@
         gcloud container clusters list    
 
 6.  Deploy the docker image into the cluster.
+
+
+# Steps to run the microservice in local machine.
+
+## Prerequisites
+1. Install python3.12 or above.
+2. Install pip3.12 or above.
+3. Install docker.
+4. Install gcloud.
+5. Install kubectl or minikube.
+
+## Create a virtual environment.
+1. Open a terminal and navigate to the directory where you want to create the virtual environment.
+2. Run the following command to create a virtual environment:
+    python3.12 -m venv myvenv
+    Note : Replace myvenv with the name of the virtual environment you want to create.
+3. Activate the virtual environment:
+    source myvenv/bin/activate
+    Note : Replace myvenv with the name of the virtual environment you created.
+4. To install the required packages, run the following command:
+    make update
+5. To run the microservice, run the following command:
+    make run
