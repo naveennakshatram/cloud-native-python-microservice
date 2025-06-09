@@ -29,7 +29,7 @@
 
     When you are using apple silicon mac, you need to use the following command to build the docker image.
 
-    docker buildx build --platform linux/amd64 -t gcr.io/YOUR_PROJECT_ID/YOUR_IMAGE_NAME:TAG --push .
+    docker buildx build --platform linux/amd64 -t gcr.io/YOUR_PROJECT_ID/YOUR_IMAGE_NAME:TAG --push .  .
     
     Note : The above command will build the docker image and push it to the GCR.
 
@@ -80,5 +80,40 @@
         kubectl get pods
     6. Command to check the status of the services.
         kubectl get services
+
+
+# Creating 2 namespaces in the GCP Cluster and Deploying the microservice in the namespaces.
+## One is for pre-production and the other is for production.
+
+## preproduction and production.
+## Prerequisites
+    1. Connecting to your GCP Kubernetes cluster
+    2. Creating the two namespaces     
+    3. Deploying this app into each namespace
+    4. Verifying that everything is working
+
+### Connecting to your GCP Kubernetes cluster
+    gcloud container clusters get-credentials cluster-name --zone us-central1-a --project project-id
+    Note: cluster-name is the name of the cluster you created in the previous step.
+Note: project-id is the project id of your GCP project.
+
+### Creating the two namespaces
+    kubectl create namespace preproduction
+    kubectl create namespace production
+    Note: preproduction and production are the names of the namespaces you want to create.
+    
+    To view the namespaces, run the following command:
+    kubectl get namespaces
+
+### Deploying this app into each namespace
+
+    Note: Here i have created 2 saperate deployment.yaml and service.yaml files for preproduction and production.
+
+    kubectl apply -f deployment.yaml -n preproduction
+    kubectl apply -f deployment.yaml -n production
+
+
+
+
 
 
