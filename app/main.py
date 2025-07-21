@@ -23,10 +23,10 @@ async def welcome():
         <body>
             {NAV_BAR}
             <h1 style="color: green; font-size: 100px; text-align: center;">
-                Welcome
+                Welcome to
             </h1>
             <h2 style="color: red; font-size: 80px; text-align: center;">
-                Python With Naveen
+                Naveen's FastAPI Application
             </h2>
         </body>
     </html>
