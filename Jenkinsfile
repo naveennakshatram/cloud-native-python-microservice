@@ -19,9 +19,8 @@ pipeline{
             steps{
                 sh '''
                     python -m venv myvenv
-                    . myvenv/bin/activate
-                    pip install -r requirements.txt
-                    myvenv/bin/uvicorn app.main:app --host 0.0.0.0 --port 8000 &
+                    myvenv/bin/pip install -r requirements.txt
+                    myvenv/bin/uvicorn app.main:app --host 0.0.0.0 --port 8000
                 '''
             }
         }
