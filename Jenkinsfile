@@ -17,6 +17,8 @@ pipeline{
             }
             steps{
                 sh '''
+                    python -m venv myvenv
+                    source venv/bin/activate
                     pip install -r requirements.txt
                     python app/main.py
                 '''
