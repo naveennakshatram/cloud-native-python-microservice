@@ -13,7 +13,7 @@ pipeline{
             agent{
                 docker{
                     image 'python:3.12'
-                    args '-p 8000:8080' // map container port 8000 to host
+                    args '-p 8000:8000' // map container port 8000 to host
                 }
             }
             steps{
