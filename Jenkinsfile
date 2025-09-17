@@ -18,9 +18,8 @@ pipeline{
             }
             steps{
                 sh '''
-                    python -m venv myvenv
-                    myvenv/bin/pip install -r requirements.txt
-                    myvenv/bin/uvicorn app.main:app --host 0.0.0.0 --port 8000
+                    docker build -t cloud-native-python-microservice .
+                    docker run -p 8000:8000 cloud-native-python-microservice
                 '''
             }
         }
