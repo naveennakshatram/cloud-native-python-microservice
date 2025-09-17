@@ -17,6 +17,7 @@ pipeline{
             }
             steps{
                 sh '''
+                    pip install -m requirements.txt
                     python app/main.py
                 '''
             }
